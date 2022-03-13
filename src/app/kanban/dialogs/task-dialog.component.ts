@@ -50,6 +50,7 @@ export class TaskDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  // Deleting a task
   handleTaskDelete() {
     this.bs.removeTask(this.data.boardId, this.data.task);
     this.dialogRef.close();

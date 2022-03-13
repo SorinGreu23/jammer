@@ -27,11 +27,13 @@ export class BoardListComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  // Dragging and dropping the boards inside the page
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.boards, event.previousIndex, event.currentIndex);
     this.boardService.sortBoards(this.boards);
   }
 
+  // Open the dialog for creating a new board
   openBoardDialog(): void {
     const dialogRef = this.dialog.open(BoardDialogComponent, {
       width: '400px',

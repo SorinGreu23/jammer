@@ -21,10 +21,11 @@ export class AuthGuard implements CanActivate {
   ): Promise<boolean> {
     const user = await this.afAuth.currentUser;
     const isLoggedIn = !!user;
+
+    // If the current user is not logged in, display an error message
     if(!isLoggedIn){
       this.snack.authError();
     }
-
     return isLoggedIn;
   }
 }
